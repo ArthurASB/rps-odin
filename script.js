@@ -13,14 +13,16 @@ Test that your function returns what you expect using console.log or the browser
 
 */
 
-let cpuChoice = getComputerChoice => Math.floor(Math.random()*3);
-if (cpuChoice()===0){
-    alert("Rock!");
-} else if (cpuChoice()===1){
-    alert("Paper!");
-} else {
-    alert("Scissor!");
-}
+let getComputerChoice = () => {
+    let cpuChoice = Math.floor(Math.random()*3);
+    if (cpuChoice()===0){
+        return ('rock');
+    } else if (cpuChoice()===1){
+        return ('paper');
+    } else {
+        return ('scissors');
+    }
+};
 
 
 
@@ -38,8 +40,13 @@ Test what your function returns by using console.log.
 
 */
 
-
-
+let getHumanChoice = () => {
+    const message = `Write one of the following ` +
+        `words to make your selection (with no quotes): ` +
+        ` 'rock', 'paper' or 'scissors'`;
+    let humanPick = prompt(message).toLowerCase();
+    return humanPick;
+}
 
 
 
@@ -53,8 +60,7 @@ Initialize those variables with the value of 0.
 
 */
 
-
-
+let humanScore = 0, computerScore = 0;
 
 
 
@@ -81,6 +87,38 @@ playRound(humanSelection, computerSelection);
 
 */
 
+/* Variables that will be passed as arguments to playRound (TODO: change type to const!)  */
+let humanSelection, computerSelection;
+
+let playRound = (humanChoice, computerChoice) => {
+    if (humanChoice === 'rock' && computerChoice === 'scissors'){
+        console.log("You score a point! Rock beats scissors!");
+        humanScore++;
+    }
+    else if (humanChoice === 'paper' && computerChoice === 'rock'){
+        console.log("You score a point! Paper beats rock!");
+        humanScore++;
+    }
+    else if (humanChoice === 'scissors' && computerChoice === 'paper'){
+        console.log("You score a point! Scissors beat paper!");
+        humanScore++;
+    }
+    else if (humanChoice === 'rock' && computerChoice === 'paper'){
+        console.log("The computer scores a point! Paper beats rock!");
+        computerScore++;
+    }    
+    else if (humanChoice === 'paper' && computerChoice === 'scissors') {
+        console.log("The computer scores a point! Scissors beat paper!");
+        computerScore++;
+    } 
+    else if (humanChoice === 'scissors' && computerChoice === 'rock'){
+        console.log("The computer scores a point! Rock beats Scissors!");
+        computerScore++;
+    }
+    else {
+        console.log("It's a draw! Nobody scores!");
+    }
+};
 
 
 
