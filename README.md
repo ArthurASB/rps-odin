@@ -6,6 +6,7 @@ That includes:
 - Data Types, particularly String and its functions
 - Conditionals (if, else, if-else, switch)
 - Functions (scope, arrow functions, anonymous functions)
+
 As well as basic debugging through DevTools.
 
 The goal of this project is to create a basic Rock, Paper, Scissors game that can be played through the web browser`s console.
