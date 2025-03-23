@@ -1,4 +1,5 @@
 const menu = document.querySelector("#menu");
+const results = document.querySelector(".results");
 
 menu.addEventListener("click", (e) => {
     let target = e.target;
@@ -17,13 +18,13 @@ menu.addEventListener("click", (e) => {
 });
 
 
-let getHumanChoice = () => {
-    const message = `Write one of the following ` +
-        `words to make your selection (with no quotes): ` +
-        ` 'rock', 'paper' or 'scissors'`;
-    let humanPick = prompt(message).toLowerCase();
-    return humanPick;
-}
+// let getHumanChoice = () => {
+//     const message = `Write one of the following ` +
+//         `words to make your selection (with no quotes): ` +
+//         ` 'rock', 'paper' or 'scissors'`;
+//     let humanPick = prompt(message).toLowerCase();
+//     return humanPick;
+// }
 
 let getComputerChoice = () => {
     let cpuChoice = Math.floor(Math.random()*3);
@@ -44,32 +45,33 @@ let getComputerChoice = () => {
     // let playRound = (humanChoice, computerChoice) => {
     let playRound = (humanChoice) => {
         let computerChoice = getComputerChoice();
+        results.textContent = '';
         if (humanChoice === 'rock' && computerChoice === 'scissors'){
             // humanScore++;
-            console.log("You score a point! Rock beats scissors!");
+            results.textContent="You score a point! Rock beats scissors!";
         }
         else if (humanChoice === 'paper' && computerChoice === 'rock'){
             // humanScore++;
-            console.log("You score a point! Paper beats rock!");
+            results.textContent="You score a point! Paper beats rock!";
         }
         else if (humanChoice === 'scissors' && computerChoice === 'paper'){
             // humanScore++;
-            console.log("You score a point! Scissors beat paper!");
+            results.textContent="You score a point! Scissors beat paper!";
         }
         else if (humanChoice === 'rock' && computerChoice === 'paper'){
             // computerScore++;
-            console.log("The computer scores a point! Paper beats rock!");
+            results.textContent="The computer scores a point! Paper beats rock!";
         }    
         else if (humanChoice === 'paper' && computerChoice === 'scissors') {
             // computerScore++;
-            console.log("The computer scores a point! Scissors beat paper!");
+            results.textContent="The computer scores a point! Scissors beat paper!";
         } 
         else if (humanChoice === 'scissors' && computerChoice === 'rock'){
             // computerScore++;
-            console.log("The computer scores a point! Rock beats Scissors!");
+            results.textContent="The computer scores a point! Rock beats Scissors!";
         }
         else {
-            console.log("It's a draw! Nobody scores!");
+            results.textContent="It's a draw! Nobody scores!";
         }
     };
 
