@@ -13,5 +13,7 @@ The goal of this project is to create a basic Rock, Paper, Scissors game that ca
 
 ## Update (March 24th 2025)
 As suggested by the Odin lesson guidelines, I have altered the code and added new features.
+
 These include interactive buttons, score display, and some very basic UI.
+
 This update aims to display my newly-acquired abilities with DOM Manipulation, Git Branching, and Javascript interactivity.
